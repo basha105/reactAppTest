@@ -1,18 +1,25 @@
-export default function TodoList() {
+function ListItem(props) {
+    return <li>{props.animal}</li>
+}
+
+function List(props) {
+    return (
+        <ul>
+            {props.animalList.map((animal) => {
+                return <ListItem key={animal} animal={animal} />;
+            })}
+
+        </ul>
+    )
+}
+
+export default function AnimalDisplay() {
+    const animals = ["Lion", "CHEESE", "Snake", "Lizard", "Giraffe", "Dog", "Shark", "Whale", "Cat"];
+
     return (
         <div>
-            <h1>Hedy Lamarr's Todos</h1>
-            <img
-                src="https://i.imgur.com/yXOvdOSs.jpg" 
-                alt="Hedy Lamarr" 
-                className="photo"
-            />
-            <ul>
-                <li>Invent new traffic lights</li>
-                <li>Rehearse a movie scene</li>
-                <li>Improve the spectrum technology</li>
-            
-            </ul>
+            <h1>Animals: </h1>
+            <List animalList={animals} />
         </div>
-    )   
+    );   
 }
