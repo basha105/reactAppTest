@@ -1,25 +1,23 @@
-function ListItem(props) {
-    return <li>{props.animal}</li>
-}
+import './App.css'
 
-function List(props) {
+function Button(props) {
+    const buttonStyle = {
+        color: props.color,
+        fontSize: props.fontSize + 'px'
+    };
     return (
-        <ul>
-            {props.animalList.map((animal) => {
-                return <ListItem key={animal} animal={animal} />;
-            })}
-
-        </ul>
-    )
+        <button style={buttonStyle}>{props.text}</button>
+    );
 }
 
-export default function AnimalDisplay() {
-    const animals = ["Lion", "CHEESE", "Snake", "Lizard", "Giraffe", "Dog", "Shark", "Whale", "Cat"];
-
+function CreateButtons() {
     return (
         <div>
-            <h1>Animals: </h1>
-            <List animalList={animals} />
+            <Button text="Ion" color="white" fontSize={18} />
+            <Button text="Brent" color="green" fontSize = {19} />
+            <Button text="norah" color="red" fontSize = {15} />
         </div>
-    );   
+    );
 }
+
+export default CreateButtons

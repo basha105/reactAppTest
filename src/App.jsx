@@ -1,20 +1,25 @@
-import { useState } from 'react'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Button(props) {
+  const buttonStyle = {
+      color: props.color,
+      fontSize: props.fontSize + 'px'
+  };
   return (
-    <>
-      <h1>Hello, Brent!</h1>
-      <p>Welcome to your first react app. This is about to be brazy</p>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 3)}>
-          epicness count: {count}
-        </button>
-      </div>
-    </>
+    <button style={buttonStyle}>{props.text}</button>
   )
+  
+}
+
+function App() {
+  return (
+    <div>
+        <Button text="Ion" color="blue" fontSize={12}></Button>
+        <Button text="Brent" color="green" fontSize={14}></Button>
+        <Button text="norah" color="red" fontSize={11}></Button>
+    </div>
+);
+  
 }
 
 export default App
