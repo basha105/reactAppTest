@@ -1,21 +1,19 @@
 import './App.css'
 
-function Button(props) {
+function Button({text = "Click me", color = "blue", fontSize = 12 }) {
     const buttonStyle = {
-        color: props.color,
-        fontSize: props.fontSize + 'px'
+        color: color,
+        fontSize: fontSize + 'px'
     };
-    return (
-        <button style={buttonStyle}>{props.text}</button>
-    );
+    return <button style={buttonStyle}>{text}</button>;
 }
 
 function CreateButtons() {
     return (
         <div>
-            <Button text="Ion" color="white" fontSize={18} />
-            <Button text="Brent" color="green" fontSize = {19} />
-            <Button text="norah" color="red" fontSize = {15} />
+            <Button />
+            <Button />
+            <Button />
         </div>
     );
 }
