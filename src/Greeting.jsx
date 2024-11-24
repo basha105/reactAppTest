@@ -11,9 +11,9 @@ function Button({text = "Click me", color = "blue", fontSize = 12 }) {
 function CreateButtons() {
     return (
         <div>
-            <Button />
-            <Button />
-            <Button />
+            <Button text="Ion" fontSize = "18"/>
+            <Button text="Brent" color = "green" fontSize ="18" />
+            <Button text="norah" color = "pink" fontSize = "18"/>
         </div>
     );
 }
